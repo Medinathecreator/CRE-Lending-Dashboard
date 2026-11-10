@@ -1,0 +1,73 @@
+{
+  "name": "New deal: stabilized acquisition / refinance",
+  "path": "permanent",
+  "property": {
+    "type": "Multifamily",
+    "market": "Your market",
+    "units": 12,
+    "gsf": null,
+    "purchase_price": 2400000,
+    "closing_cost_pct": 0.02,
+    "income_mode": "detail",
+    "rent_roll": [
+      {
+        "Unit type": "1BR",
+        "Units": 6,
+        "Monthly rent": 1650.0
+      },
+      {
+        "Unit type": "2BR",
+        "Units": 6,
+        "Monthly rent": 1950.0
+      }
+    ],
+    "gpr": 259200,
+    "other_income": 6000,
+    "vacancy_pct": 0.06,
+    "opex": 100000
+  },
+  "perm": {
+    "rate": null,
+    "amort_years": 30,
+    "max_ltv": 0.75,
+    "min_dscr": 1.25,
+    "min_debt_yield": 0.08,
+    "dscr_basis": "amortizing",
+    "requested_ltv": 0.75,
+    "closing_cost_pct": 0.01,
+    "lender_type": "DSCR loan (investor)"
+  },
+  "borrower": {
+    "credit_score": 720,
+    "liquidity": 650000,
+    "net_worth": 1200000,
+    "existing_debt": 60000,
+    "deals_completed": 0,
+    "experience_years": 0,
+    "annual_income": 85000,
+    "recourse_pct": 0.0,
+    "sponsor_equity_share": 0.5
+  },
+  "personal_debts": [
+    {
+      "name": "Student loan",
+      "balance": 38000,
+      "rate": 0.055,
+      "monthly_payment": 410
+    },
+    {
+      "name": "Auto loan",
+      "balance": 22000,
+      "rate": 0.069,
+      "monthly_payment": 520
+    },
+    {
+      "name": "Credit card",
+      "balance": 3500,
+      "rate": 0.229,
+      "monthly_payment": 150
+    }
+  ],
+  "assumptions_note": "Starter values for a small first acquisition with one equity partner (you fund 50%). Replace every input with your deal.",
+  "expected": []
+}

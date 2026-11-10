@@ -1,0 +1,164 @@
+{
+  "name": "Test Deal 1: Chicago mixed-use ground-up development (hypothetical)",
+  "path": "development",
+  "property": {
+    "type": "Multifamily",
+    "market": "Chicago, IL",
+    "units": 319,
+    "gsf": 401600,
+    "description": "Multifamily + retail + parking",
+    "income_mode": "noi",
+    "noi": 10330000,
+    "vacancy_pct": 0.05,
+    "assumed_opex_ratio": 0.4
+  },
+  "development": {
+    "land": 13600000,
+    "hard": 126500000,
+    "soft": 23900000,
+    "financing": 2250000,
+    "noi_trended": 11750000,
+    "exit_cap": 0.05
+  },
+  "construction": {
+    "ltc_max": 0.6,
+    "loan_amount": null,
+    "spread_bps": 275,
+    "origination_pct": 0.01,
+    "term_months": 48,
+    "construction_months": 30,
+    "leaseup_months": 18,
+    "draw_curve": "straight",
+    "leaseup_noi_pays_interest": true,
+    "sofr": 0.0388,
+    "lender_type": "Bank construction"
+  },
+  "perm": {
+    "rate": 0.05,
+    "amort_years": 30,
+    "max_ltv": 0.65,
+    "min_dscr": 1.2,
+    "min_debt_yield": 0.08,
+    "dscr_basis": "amortizing",
+    "requested_ltv": null,
+    "closing_cost_pct": 0.0,
+    "lender_type": "Agency (Fannie/Freddie)"
+  },
+  "borrower": {
+    "credit_score": 760,
+    "liquidity": 15000000,
+    "net_worth": 120000000,
+    "existing_debt": 85000000,
+    "deals_completed": 12,
+    "experience_years": 15,
+    "annual_income": 2500000,
+    "recourse_pct": 0.25,
+    "sponsor_equity_share": 0.1
+  },
+  "personal_debts": [
+    {
+      "name": "Student loan",
+      "balance": 38000,
+      "rate": 0.055,
+      "monthly_payment": 410
+    },
+    {
+      "name": "Auto loan",
+      "balance": 22000,
+      "rate": 0.069,
+      "monthly_payment": 520
+    },
+    {
+      "name": "Credit card",
+      "balance": 3500,
+      "rate": 0.229,
+      "monthly_payment": 150
+    }
+  ],
+  "assumptions_note": "Not in the source model, so assumed (edit in the app): 40% opex ratio and 5% vacancy to split NOI for stress tests; 30-month build + 18-month lease-up; straight-line draws; SOFR 3.88%; perm limits 65% LTV / 1.20x DSCR / 8% debt yield; sample sponsor profile and personal debts. Sponsor funds 10% of equity (GP co-invest); LPs fund the rest.",
+  "expected": [
+    {
+      "key": "total_cost",
+      "label": "Total project cost",
+      "value": 166600000,
+      "tol": 50000,
+      "source": "Source model"
+    },
+    {
+      "key": "construction_loan",
+      "label": "Construction loan (60% LTC)",
+      "value": 99900000,
+      "tol": 50000,
+      "source": "Source model"
+    },
+    {
+      "key": "equity",
+      "label": "Sponsor equity",
+      "value": 66700000,
+      "tol": 50000,
+      "source": "Source model"
+    },
+    {
+      "key": "ltc",
+      "label": "Loan-to-cost",
+      "value": 0.6,
+      "tol": 0.005,
+      "source": "Source model"
+    },
+    {
+      "key": "yoc_untrended",
+      "label": "Yield on cost, untrended",
+      "value": 0.102,
+      "tol": 0.0005,
+      "source": "Source model"
+    },
+    {
+      "key": "yoc_trended",
+      "label": "Yield on cost, trended",
+      "value": 0.117,
+      "tol": 0.0005,
+      "source": "Source model"
+    },
+    {
+      "key": "loan",
+      "label": "Permanent takeout loan (8% debt yield)",
+      "value": 129100000,
+      "tol": 50000,
+      "source": "Source model"
+    },
+    {
+      "key": "binding",
+      "label": "Binding constraint on perm loan",
+      "value": "Debt Yield",
+      "source": "Source model"
+    },
+    {
+      "key": "constant",
+      "label": "Perm loan constant (5%, 30-yr)",
+      "value": 0.0644,
+      "tol": 5e-05,
+      "source": "Source model"
+    },
+    {
+      "key": "dscr_io",
+      "label": "DSCR, interest-only",
+      "value": 1.6,
+      "tol": 0.005,
+      "source": "Source model"
+    },
+    {
+      "key": "dscr_amort",
+      "label": "DSCR, amortizing",
+      "value": 1.24,
+      "tol": 0.005,
+      "source": "Your check"
+    },
+    {
+      "key": "net_refi_proceeds",
+      "label": "Net refinancing proceeds",
+      "value": 113200000,
+      "tol": 50000,
+      "source": "Source model"
+    }
+  ]
+}

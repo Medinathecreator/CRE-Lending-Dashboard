@@ -1,0 +1,80 @@
+{
+  "name": "New deal: ground-up development",
+  "path": "development",
+  "property": {
+    "type": "Multifamily",
+    "market": "Your market",
+    "units": 60,
+    "gsf": 60000,
+    "description": "",
+    "income_mode": "noi",
+    "noi": 1450000,
+    "vacancy_pct": 0.05,
+    "assumed_opex_ratio": 0.4
+  },
+  "development": {
+    "land": 2000000,
+    "hard": 15000000,
+    "soft": 2500000,
+    "financing": 1200000,
+    "noi_trended": 1550000,
+    "exit_cap": 0.055
+  },
+  "construction": {
+    "ltc_max": 0.6,
+    "loan_amount": null,
+    "spread_bps": 300,
+    "origination_pct": 0.01,
+    "term_months": 36,
+    "construction_months": 20,
+    "leaseup_months": 10,
+    "draw_curve": "straight",
+    "leaseup_noi_pays_interest": true,
+    "sofr": null,
+    "lender_type": "Bank construction"
+  },
+  "perm": {
+    "rate": null,
+    "amort_years": 30,
+    "max_ltv": 0.7,
+    "min_dscr": 1.25,
+    "min_debt_yield": 0.08,
+    "dscr_basis": "amortizing",
+    "requested_ltv": null,
+    "closing_cost_pct": 0.0,
+    "lender_type": "Agency (Fannie/Freddie)"
+  },
+  "borrower": {
+    "credit_score": 740,
+    "liquidity": 2500000,
+    "net_worth": 5000000,
+    "existing_debt": 1000000,
+    "deals_completed": 2,
+    "experience_years": 4,
+    "annual_income": 250000,
+    "recourse_pct": 1.0,
+    "sponsor_equity_share": 0.25
+  },
+  "personal_debts": [
+    {
+      "name": "Student loan",
+      "balance": 38000,
+      "rate": 0.055,
+      "monthly_payment": 410
+    },
+    {
+      "name": "Auto loan",
+      "balance": 22000,
+      "rate": 0.069,
+      "monthly_payment": 520
+    },
+    {
+      "name": "Credit card",
+      "balance": 3500,
+      "rate": 0.229,
+      "monthly_payment": 150
+    }
+  ],
+  "assumptions_note": "Starter values for a small development. Replace every input with your deal.",
+  "expected": []
+}

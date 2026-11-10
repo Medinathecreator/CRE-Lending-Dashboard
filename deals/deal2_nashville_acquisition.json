@@ -1,0 +1,110 @@
+{
+  "name": "Test Deal 2: Nashville-style stabilized multifamily acquisition (hypothetical)",
+  "path": "permanent",
+  "property": {
+    "type": "Multifamily",
+    "market": "Nashville, TN",
+    "units": 120,
+    "gsf": null,
+    "description": "Stabilized garden/mid-rise multifamily",
+    "purchase_price": 30000000,
+    "closing_cost_pct": 0.015,
+    "income_mode": "noi",
+    "noi": 1650000,
+    "vacancy_pct": 0.05,
+    "assumed_opex_ratio": 0.4
+  },
+  "perm": {
+    "rate": 0.0625,
+    "amort_years": 30,
+    "max_ltv": 0.65,
+    "min_dscr": 1.25,
+    "min_debt_yield": 0.08,
+    "dscr_basis": "amortizing",
+    "requested_ltv": 0.65,
+    "closing_cost_pct": 0.0,
+    "lender_type": "Bank balance sheet"
+  },
+  "borrower": {
+    "credit_score": 740,
+    "liquidity": 2500000,
+    "net_worth": 18000000,
+    "existing_debt": 9000000,
+    "deals_completed": 4,
+    "experience_years": 6,
+    "annual_income": 350000,
+    "recourse_pct": 0.0,
+    "sponsor_equity_share": 0.1
+  },
+  "personal_debts": [
+    {
+      "name": "Student loan",
+      "balance": 38000,
+      "rate": 0.055,
+      "monthly_payment": 410
+    },
+    {
+      "name": "Auto loan",
+      "balance": 22000,
+      "rate": 0.069,
+      "monthly_payment": 520
+    },
+    {
+      "name": "Credit card",
+      "balance": 3500,
+      "rate": 0.229,
+      "monthly_payment": 150
+    }
+  ],
+  "assumptions_note": "Not given, so assumed (edit in the app): 40% opex ratio and 5% vacancy to split NOI for stress tests; 1.5% closing costs; sample borrower profile and personal debts; sponsor funds 10% of equity (GP co-invest), LPs fund the rest.",
+  "expected": [
+    {
+      "key": "requested_loan",
+      "label": "Loan at 65% LTV",
+      "value": 19500000,
+      "tol": 50000,
+      "source": "Your expected result"
+    },
+    {
+      "key": "constant",
+      "label": "Loan constant (6.25%, 30-yr)",
+      "value": 0.0739,
+      "tol": 5e-05,
+      "source": "Your expected result"
+    },
+    {
+      "key": "requested_dscr_amort",
+      "label": "DSCR at 65% LTV",
+      "value": 1.15,
+      "tol": 0.005,
+      "source": "Your expected result"
+    },
+    {
+      "key": "binding",
+      "label": "Binding constraint",
+      "value": "DSCR",
+      "source": "Your expected result"
+    },
+    {
+      "key": "loan",
+      "label": "Sized loan",
+      "value": 17900000,
+      "tol": 50000,
+      "source": "Your expected result"
+    },
+    {
+      "key": "ltv",
+      "label": "Sized LTV",
+      "value": 0.6,
+      "tol": 0.005,
+      "source": "Your expected result"
+    },
+    {
+      "key": "debt_yield",
+      "label": "Debt yield at sized loan",
+      "value": 0.092,
+      "tol": 0.0005,
+      "source": "Your expected result"
+    }
+  ]
+}
