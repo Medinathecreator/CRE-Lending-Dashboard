@@ -41,13 +41,6 @@ A lender's-eye view of a commercial real estate loan. Enter a property and borro
 
 **Validation rule:** the tool recomputes everything from the inputs. Figures from your source or test model go in a deal's `expected` list. The tool reports **Ties / Minor mismatch / MISMATCH** and never adjusts its math to match.
 
-## Run on Replit
-1. Create a new **Python** Repl and upload this folder's contents, so `app.py` is at the top level.
-2. Press **Run**. `.replit` starts Streamlit on port 8080, and Replit installs `requirements.txt`.
-3. Optional: add a free FRED API key (fred.stlouisfed.org → My Account → API Keys) in **Tools → Secrets** as `FRED_API_KEY`.
-   - Without a key, the app uses FRED's public CSV download.
-   - If FRED can't be reached, it uses stored benchmark values and labels them "fallback".
-
 ## Test deals (in `deals/`)
 
 | Deal | Result |
