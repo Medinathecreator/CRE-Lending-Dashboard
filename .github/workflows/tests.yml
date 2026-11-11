@@ -1,0 +1,32 @@
+name: tests
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install Python packages (the engine and Excel builder only; the UI isn't needed for tests)
+        run: pip install pandas openpyxl requests
+
+      - name: Install LibreOffice (recalculates the Excel models)
+        run: sudo apt-get update && sudo apt-get install -y --no-install-recommends libreoffice-calc
+
+      - name: Run every deal, build its Excel model, recalculate, and tie Excel out to Python
+        run: python tests/test_deals.py tests/recalc.py
+
+      - name: Save the generated Excel models
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: excel-models
+          path: output/*.xlsx
