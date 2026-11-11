@@ -32,6 +32,13 @@ def usd(x):
     return "-" if x is None else f"${x:,.0f}"
 
 
+def usd_m(x):
+    """Short money format for the headline tiles: $129.1M, $850K."""
+    if x is None:
+        return "-"
+    return f"${x / 1e6:,.1f}M" if abs(x) >= 1e6 else f"${x / 1e3:,.0f}K"
+
+
 def pct(x, d=2):
     return "-" if x is None else f"{x:.{d}%}"
 
@@ -215,15 +222,21 @@ except Exception as e:  # show input problems instead of a stack trace
 dev = "development" in res
 s = res["sizing"]
 k = st.columns(6)
-k[0].metric("Permanent loan" if not dev else "Takeout loan", usd(s["loan"]), f"{s['binding']} binds", delta_color="off")
 if dev:
-    k[1].metric("Construction loan", usd(res["development"]["construction_loan"]), f"{res['development']['ltc']:.1%} LTC", delta_color="off")
+    k[0].metric("Takeout loan", usd_m(s["loan"]))
+    k[1].metric("Construction loan", usd_m(res["development"]["construction_loan"]))
 else:
+    k[0].metric("Loan", usd_m(s["loan"]))
     k[1].metric("LTV", pct(s["ltv"], 1))
-k[2].metric("DSCR amortizing / IO", f"{s['dscr_amort']:.2f}x / {s['dscr_io']:.2f}x")
-k[3].metric("Debt yield", pct(s["debt_yield"]))
-k[4].metric("Breakeven occupancy", pct(res["breakeven_occ"], 1))
-k[5].metric("Risk score", f"{res['scorecard']['score']:.2f}", res["scorecard"]["grade"], delta_color="off")
+k[2].metric("DSCR, amortizing", xx(s["dscr_amort"]))
+k[3].metric("DSCR, interest-only", xx(s["dscr_io"]))
+k[4].metric("Debt yield", pct(s["debt_yield"]))
+k[5].metric("Risk score", f"{res['scorecard']['score']:.2f}")
+st.caption(" · ".join(x_ for x_ in [
+    f"**{s['binding']}** is the binding constraint",
+    f"{res['development']['ltc']:.1%} LTC" if dev else None,
+    f"breakeven occupancy {pct(res['breakeven_occ'], 1)}",
+    f"risk grade **{res['scorecard']['grade']}**"] if x_))
 for w in res["warnings"]:
     st.warning(w)
 
