@@ -17,13 +17,12 @@ A lender's-eye view of a commercial real estate loan. Enter a property and borro
 
 ## Screenshots
 
-<!-- App screenshots: save them in docs/screenshots/ with these names, then delete the comment markers around this block.
 **Dashboard: loan sizing (Test Deal 2)**
 ![Dashboard loan sizing](docs/screenshots/app-loan-sizing.png)
 
 **Dashboard: construction draw and takeout test (Test Deal 1)**
 ![Dashboard development tab](docs/screenshots/app-development.png)
--->
+
 
 **Excel Credit Summary (Test Deal 1).** One-page view, plus the reconciliation that flags where the source model doesn't tie.
 ![Excel credit summary](docs/screenshots/excel-credit-summary.png)
