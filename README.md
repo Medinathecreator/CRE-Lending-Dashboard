@@ -1,8 +1,7 @@
 # CRE Credit Dashboard
 
 [![tests](https://github.com/Medinathecreator/Real-Estate-Credit-Dashboard/actions/workflows/tests.yml/badge.svg)](https://github.com/Medinathecreator/Real-Estate-Credit-Dashboard/actions/workflows/tests.yml)
-<!-- Live demo: replace the line below with your Streamlit Community Cloud link, then delete this comment -->
-<!-- **[Live demo](https://YOUR-APP.streamlit.app)** -->
+(https://real-estate-credit-dashboard-6mmu5mgshzu4ohqxssuggd.streamlit.app/)
 
 A lender's-eye view of a commercial real estate loan. Enter a property and borrower; the dashboard sizes and qualifies the loan, stress-tests it, scores the risk, prices it by lender type, shows how it fits a personal debt schedule, and builds an auditable Excel model with **live formulas**.
 
